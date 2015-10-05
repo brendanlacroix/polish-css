@@ -1,0 +1,21 @@
+{
+  "name": "PolishCSS",
+  "version": "1.0.0-alpha",
+  "description": "A plugin-based linting tool for CSS. Make your stylesheets perfect. Add an extra coat of polish.",
+  "main": "./lib/polish.js",
+  "bin": {
+    "polish": "./lib/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brendan LaCroix <brendanlacroix@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "gonzales-pe": "git://github.com/brendanlacroix/gonzales-pe.git",
+    "lodash": "^3.10.1",
+    "require-dir": "^0.3.0",
+    "vinyl-fs": "^2.1.1"
+  }
+}
