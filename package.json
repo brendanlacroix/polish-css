@@ -12,10 +12,13 @@
   "author": "Brendan LaCroix <brendanlacroix@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.1.1",
     "commander": "^2.8.1",
     "gonzales-pe": "git://github.com/brendanlacroix/gonzales-pe.git",
     "lodash": "^3.10.1",
+    "log-symbols": "^1.0.2",
     "require-dir": "^0.3.0",
+    "text-table": "^0.2.0",
     "vinyl-fs": "^2.1.1"
   }
 }
