@@ -1,10 +1,14 @@
 {
   "name": "polish-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plugin-based linting tool for CSS. Make your stylesheets perfect. Add an extra coat of polish.",
   "main": "./lib/polish.js",
   "bin": {
     "polish": "./lib/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brendanlacroix/polish-css.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
