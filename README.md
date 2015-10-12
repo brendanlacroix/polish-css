@@ -17,9 +17,9 @@ Or don't. You're the boss.
 Play by your own rules with PolishCSS.
 
 **Features:**
-:nail_care: Totally unopinionated. No default linters.
-:nail_care: Totally plugin based.
-:nail_care: Totally named in honor of the nail polish emoji.
+- :nail_care: Totally unopinionated. No default linters.
+- :nail_care: Totally plugin based.
+- :nail_care: Totally named in honor of the nail polish emoji.
 
 _PolishCSS works with CSS, SCSS, Sass, and Less._
 
