@@ -1,0 +1,33 @@
+/* should fail */
+@font-face {
+  font-family: FontAwesome;
+  src: url("fonts/fontawesome-webfont.eot?v=#4.0.3");
+  src: url("fonts/fontawesome-webfont.eot?#iefix&v=#4.0.3") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff?v=#4.0.3") format("woff"), url("fonts/fontawesome-webfont.ttf?v=#4.0.3") format("truetype"), url("fonts/fontawesome-webfont.svg#fontawesomeregular?v=#4.0.3") format("svg");
+}
+
+.awful-class {
+  color: #f0f;
+  font-family: sans;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+#will-fail {
+  color: red;
+}
+
+/* should pass */
+.cool-really-good-selector {
+  background-color: green;
+}
+
+/* polish no-styling-ids=false */
+#passes-thanks-to-inline-config {
+  color: green;
+}
+
+#will-also-fail {
+  color: red;
+}
