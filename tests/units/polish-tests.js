@@ -2,7 +2,6 @@ define(function (require) {
   var registerSuite = require('intern!object'),
       assert        = require('intern/chai!assert'),
       fs            = require('intern/dojo/node!fs'),
-      plugins       = require('intern/dojo/node!../../tests/test_helpers/plugins'),
       polish        = require('intern/dojo/node!../../lib/polish');
 
   registerSuite({

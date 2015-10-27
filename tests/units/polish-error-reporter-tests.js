@@ -2,7 +2,6 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
   var registerSuite = require('intern!object'),
       assert        = require('intern/chai!assert'),
       fs            = require('intern/dojo/node!fs'),
-      plugins       = require('intern/dojo/node!../../tests/test_helpers/plugins'),
       polish        = require('intern/dojo/node!../../lib/polish');
 
   chai.use(sinonChai);
@@ -21,23 +20,23 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
       },
 
       'test that it does not report if there are no errors': function() {
-          var deferred = this.async(3000),
+        var deferred = this.async(3000),
             errors;
 
-        fs.readFile('./tests/test_helpers/css.css', deferred.callback(function(error, stylesheet) {
+        fs.readFile('./tests/test_helpers/no-errors.css', deferred.callback(function(error, stylesheet) {
           if (error) {
             throw error;
           }
 
-          errors = polish(stylesheet.toString('utf8'), './tests/test_helpers/css.css', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'], ignoredPlugins: ['no-styling-elements'] });
+          errors = polish(stylesheet.toString('utf8'), './tests/test_helpers/no-errors.css', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'], ignoredPlugins: ['no-styling-elements'] });
 
-          polish.reporter('./tests/test_helpers/css.css', errors);
+          polish.reporter('./tests/test_helpers/no-errors.css', errors);
 
           chai.expect(consoleLogStub).to.not.be.called;
         }));
       },
       'test that it reports an error': function() {
-          var deferred = this.async(3000),
+        var deferred = this.async(3000),
             errors;
 
         fs.readFile('./tests/test_helpers/scss.scss', deferred.callback(function(error, stylesheet) {
@@ -63,7 +62,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
         }));
       },
       'test that it reports multiple errors grouped under the filename': function() {
-          var deferred = this.async(3000),
+        var deferred = this.async(3000),
             errors;
 
         fs.readFile('./tests/test_helpers/scss.scss', deferred.callback(function(error, stylesheet) {
@@ -94,7 +93,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
       },
       'test that it reports both file-level and node-level errors': function() {
           var deferred = this.async(3000),
-            errors;
+              errors;
 
         fs.readFile('./tests/test_helpers/scss.scss', deferred.callback(function(error, stylesheet) {
           if (error) {
@@ -127,8 +126,6 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
               message: ''
             }
           }));
-
-
         }));
       }
     };

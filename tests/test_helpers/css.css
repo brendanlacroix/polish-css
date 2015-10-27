@@ -14,7 +14,20 @@
   letter-spacing: 2px;
 }
 
+#will-fail {
+  color: red;
+}
+
 /* should pass */
 .cool-really-good-selector {
   background-color: green;
+}
+
+/* polish no-styling-ids=false */
+#passes-thanks-to-inline-config {
+  color: green;
+}
+
+#will-also-fail {
+  color: red;
 }
