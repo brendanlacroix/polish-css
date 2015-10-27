@@ -1,5 +1,7 @@
 # PolishCSS :nail_care:
 
+[![Build Status](https://travis-ci.org/brendanlacroix/polish-css.svg)](https://travis-ci.org/brendanlacroix/polish-css) [![codecov.io](https://codecov.io/github/brendanlacroix/polish-css/coverage.svg?branch=master)](https://codecov.io/github/brendanlacroix/polish-css?branch=master)
+
 - [Overview](#overview)
 - [Quick start](#quickstart)
 - [Installation](#installation)
