@@ -37,6 +37,11 @@ define({
   //   // Packages that should be registered with the loader in each testing environment
   // },
 
+  reporters: [
+    { id: 'Console' },
+    { id: 'Lcov', filename: './coverage/lcov.info' }
+  ],
+
   // Non-functional test suite(s) to run in each browser
   suites: [
     'tests/units/polish-tests',

@@ -1,6 +1,6 @@
 {
   "name": "polish-css",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A plugin-based linting tool for CSS. Make your stylesheets perfect. Add an extra coat of polish.",
   "main": "./lib/polish.js",
   "bin": {
@@ -26,6 +26,7 @@
     "vinyl-fs": "^2.1.1"
   },
   "devDependencies": {
+    "codecov.io": "^0.1.6",
     "intern": "^3.0.6",
     "polish-plugin-match-stylesheet-names-to-rules": "^1.0.0",
     "polish-plugin-no-styling-elements": "^1.0.0",
