@@ -22,6 +22,7 @@
   "yui"         : true,
   "es3"         : true,
   "globals": {
-    "JSON": true
+    "JSON": true,
+    "define": true
   }
 }

@@ -11,7 +11,7 @@
     "url": "https://github.com/brendanlacroix/polish-css.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/intern-client config=tests/intern"
   },
   "author": "Brendan LaCroix <brendanlacroix@gmail.com>",
   "license": "MIT",
@@ -24,5 +24,8 @@
     "require-dir": "^0.3.0",
     "text-table": "^0.2.0",
     "vinyl-fs": "^2.1.1"
+  },
+  "devDependencies": {
+    "intern": "^3.0.6"
   }
 }
