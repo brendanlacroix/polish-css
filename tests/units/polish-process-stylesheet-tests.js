@@ -24,7 +24,7 @@ define([
 
         },
 
-        'test that attempting to polish a non-CSS, SCSS, Sass, or LESS file throws an error': function() {
+        'test that an error is thrown on non-CSS, SCSS, Sass, or LESS files': function() {
           var deferred = this.async(3000),
               output;
 

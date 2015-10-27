@@ -6,7 +6,7 @@ define(function (require) {
 
   registerSuite({
     name: 'polish',
-    'test that PolishCSS errors without plugins specified': function() {
+    'test that an error is thrown without plugins specified': function() {
       var deferred = this.async(3000);
 
       fs.readFile('./tests/test_helpers/scss.scss', deferred.callback(function(error, stylesheet) {
@@ -21,7 +21,7 @@ define(function (require) {
         }
       }));
     },
-    'test that PolishCSS errors on empty stylesheets': function() {
+    'test that an error is thrown on empty stylesheets': function() {
       var deferred = this.async(3000);
 
       fs.readFile('./tests/test_helpers/empty.css', deferred.callback(function(error, stylesheet) {
@@ -36,7 +36,7 @@ define(function (require) {
         }
       }));
     },
-    'test that PolishCSS will run with a plugin': function() {
+    'test that plugins work': function() {
       var deferred = this.async(3000),
           errors;
 
@@ -58,7 +58,7 @@ define(function (require) {
         assert.property(errors[0].data, 'rule');
       }));
     },
-    'test that PolishCSS allows ignoring plugins': function() {
+    'test that ignoring plugins properly passes into getPlugins': function() {
       var deferred = this.async(3000),
           errors;
 
@@ -74,7 +74,7 @@ define(function (require) {
         assert.strictEqual(errors[0].rule.name, 'no-styling-ids');
       }));
     },
-    'test that Polish exports helper methods': function() {
+    'test that helper methods are exported': function() {
       assert.property(polish, 'reporter');
       assert.property(polish, 'getPlugins');
     }
