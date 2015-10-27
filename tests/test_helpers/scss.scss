@@ -22,6 +22,12 @@
     letter-spacing: 2px;
   }
 }
+#no-styling-ids {
+  color: red;
+}
+div {
+  color: red;
+}
 
 /* should pass */
 .cool-really-good-selector {

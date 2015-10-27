@@ -38,7 +38,7 @@ define({
   // },
 
   // Non-functional test suite(s) to run in each browser
-  suites: [ 'tests/tests' ],
+  suites: [ 'tests/units/polish-tests', 'tests/units/polish-error-reporter-tests' ],
 
   // Functional test suite(s) to execute against each browser once non-functional tests are completed
   functionalSuites: [ /* 'myPackage/tests/functional' */ ],
