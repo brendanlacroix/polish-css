@@ -11,7 +11,8 @@
     "url": "https://github.com/brendanlacroix/polish-css.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/intern-client config=tests/intern"
+    "test": "./node_modules/.bin/intern-client config=tests/intern",
+    "changelog": "conventional-changelog -o CHANGELOG.md"
   },
   "author": "Brendan LaCroix <brendanlacroix@gmail.com>",
   "license": "MIT",
