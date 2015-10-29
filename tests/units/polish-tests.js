@@ -38,40 +38,39 @@ define(function (require) {
     },
     'test that plugins work': function() {
       var deferred = this.async(3000),
-          errors;
+          results;
 
       fs.readFile('./tests/test_helpers/scss.scss', deferred.callback(function(error, stylesheet) {
         if (error) {
           throw error;
         }
 
-        errors = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids'] });
+        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids'] });
 
-        assert.isArray(errors);
-        assert.strictEqual(errors.length, 1);
-        assert.isObject(errors[0]);
-        assert.property(errors[0], 'file');
-        assert.property(errors[0], 'rule');
-        assert.property(errors[0].rule, 'name');
-        assert.property(errors[0].rule, 'message');
-        assert.property(errors[0], 'data');
-        assert.property(errors[0].data, 'rule');
+        assert.isObject(results);
+        assert.strictEqual(results.errors.length, 1);
+        assert.isObject(results.errors[0]);
+        assert.property(results.errors[0], 'rule');
+        assert.property(results.errors[0].rule, 'name');
+        assert.property(results.errors[0].rule, 'message');
+        assert.property(results.errors[0], 'data');
+        assert.property(results.errors[0].data, 'rule');
       }));
     },
     'test that ignoring plugins properly passes into getPlugins': function() {
       var deferred = this.async(3000),
-          errors;
+          results;
 
       fs.readFile('./tests/test_helpers/scss.scss', deferred.callback(function(error, stylesheet) {
         if (error) {
           throw error;
         }
 
-        errors = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'], ignoredPlugins: ['no-styling-elements'] });
+        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'], ignoredPlugins: ['no-styling-elements'] });
 
-        assert.isArray(errors);
-        assert.strictEqual(errors.length, 1);
-        assert.strictEqual(errors[0].rule.name, 'no-styling-ids');
+        assert.isObject(results);
+        assert.strictEqual(results.errors.length, 1);
+        assert.strictEqual(results.errors[0].rule.name, 'no-styling-ids');
       }));
     },
     'test that helper methods are exported': function() {

@@ -61,7 +61,7 @@ define([
           var deferred = this.async(3000),
               idCount = 0,
               output,
-              errors;
+              results;
 
           fs.readFile('./tests/test_helpers/css.css', deferred.callback(function(error, stylesheet) {
             if (error) {
@@ -69,7 +69,7 @@ define([
             }
 
             output = processStylesheet(stylesheet.toString('utf8'), './tests/test_helpers/css.css');
-            errors = polish(stylesheet.toString('utf8'), './tests/test_helpers/css.css', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'] });
+            results = polish(stylesheet.toString('utf8'), './tests/test_helpers/css.css', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'] });
 
             output.ast.traverse(function(node) {
               if (node.type === 'id') {
@@ -78,7 +78,7 @@ define([
             });
 
             assert.strictEqual(idCount, 3);
-            assert.strictEqual(errors.length, 2);
+            assert.strictEqual(results.errors.length, 2);
           }));
         }
       };
