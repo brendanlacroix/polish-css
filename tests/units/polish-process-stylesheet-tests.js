@@ -17,13 +17,6 @@ define([
       return {
         name: 'polish-process-stylesheet',
 
-        beforeEach: function() {
-
-        },
-        afterEach: function() {
-
-        },
-
         'test that an error is thrown on non-CSS, SCSS, Sass, or LESS files': function() {
           var deferred = this.async(3000),
               output;
