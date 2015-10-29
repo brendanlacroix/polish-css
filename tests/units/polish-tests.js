@@ -50,9 +50,9 @@ define(function (require) {
         assert.isObject(results);
         assert.strictEqual(results.errors.length, 1);
         assert.isObject(results.errors[0]);
-        assert.property(results.errors[0], 'rule');
-        assert.property(results.errors[0].rule, 'name');
-        assert.property(results.errors[0].rule, 'message');
+        assert.property(results.errors[0], 'plugin');
+        assert.property(results.errors[0].plugin, 'name');
+        assert.property(results.errors[0].plugin, 'message');
         assert.property(results.errors[0], 'data');
         assert.property(results.errors[0].data, 'rule');
       }));
@@ -70,7 +70,7 @@ define(function (require) {
 
         assert.isObject(results);
         assert.strictEqual(results.errors.length, 1);
-        assert.strictEqual(results.errors[0].rule.name, 'no-styling-ids');
+        assert.strictEqual(results.errors[0].plugin.name, 'no-styling-ids');
       }));
     },
     'test that helper methods are exported': function() {

@@ -58,7 +58,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
           /* should report the failed node as a string */
           chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids { color: red;}');
           /* should report the error message */
-          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].rule.message);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].plugin.message);
         }));
       },
       'test that it reports multiple errors grouped under the filename': function() {
@@ -87,8 +87,8 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
           chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids { color: red;}');
           chai.expect(consoleLogStub).to.be.calledWithMatch('div');
           /* should report the error message */
-          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].rule.message);
-          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].rule.message);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].plugin.message);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].plugin.message);
         }));
       },
       'test that it reports both file-level and node-level errors': function() {
@@ -118,9 +118,9 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
           chai.expect(consoleLogStub).to.be.calledWithMatch('div');
           chai.expect(consoleLogStub).to.be.calledWithMatch('File warning:');
           /* should report the error message */
-          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].rule.message);
-          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].rule.message);
-          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[2].rule.message({
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].plugin.message);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].plugin.message);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[2].plugin.message({
             data : {
               errorName: 'failed_on_multiple',
               message: ''
