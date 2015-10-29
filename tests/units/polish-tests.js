@@ -17,7 +17,7 @@ define(function (require) {
         try {
           polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', {});
         } catch(e) {
-          assert.strictEqual(e.message, 'Polish requires a list of plugins. Please specify a list of modules or the path to a directory containing a set of plugins.');
+          assert.strictEqual(e.message, 'Polish requires a list of plugins. Please add some plugin modules to your config.');
         }
       }));
     },
