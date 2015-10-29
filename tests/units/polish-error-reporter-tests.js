@@ -52,11 +52,9 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
           /* should report the filename */
           chai.expect(consoleLogStub).and.calledWithMatch(results.filePath);
           /* should report the line number */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('line ' + results.errors[0].data.rule.start.line);
-          /* should report the column number */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('col ' + results.errors[0].data.rule.start.column);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].error.node.start.line + ':' + results.errors[0].error.node.start.column);
           /* should report the failed node as a string */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids { color: red;}');
+          chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids');
           /* should report the error message */
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].plugin.message);
         }));
@@ -78,13 +76,10 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
           /* should report the filename */
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.filePath);
           /* should report the line number */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('line ' + results.errors[0].data.rule.start.line);
-          chai.expect(consoleLogStub).to.be.calledWithMatch('line ' + results.errors[1].data.rule.start.line);
-          /* should report the column number */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('col ' + results.errors[0].data.rule.start.column);
-          chai.expect(consoleLogStub).to.be.calledWithMatch('col ' + results.errors[1].data.rule.start.column);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].error.node.start.line + ':' + results.errors[0].error.node.start.column);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].error.node.start.line + ':' + results.errors[1].error.node.start.column);
           /* should report the failed node as a string */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids { color: red;}');
+          chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids');
           chai.expect(consoleLogStub).to.be.calledWithMatch('div');
           /* should report the error message */
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].plugin.message);
@@ -108,20 +103,17 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
           /* should report the filename */
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.filePath);
           /* should report the line number */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('line ' + results.errors[0].data.rule.start.line);
-          chai.expect(consoleLogStub).to.be.calledWithMatch('line ' + results.errors[1].data.rule.start.line);
-          /* should report the column number */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('col ' + results.errors[0].data.rule.start.column);
-          chai.expect(consoleLogStub).to.be.calledWithMatch('col ' + results.errors[1].data.rule.start.column);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].error.node.start.line + ':' + results.errors[0].error.node.start.column);
+          chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].error.node.start.line + ':' + results.errors[1].error.node.start.column);
           /* should report the failed node as a string */
-          chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids { color: red;}');
+          chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids');
           chai.expect(consoleLogStub).to.be.calledWithMatch('div');
           chai.expect(consoleLogStub).to.be.calledWithMatch('File warning:');
           /* should report the error message */
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].plugin.message);
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].plugin.message);
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[2].plugin.message({
-            data : {
+            error : {
               errorName: 'failed_on_multiple',
               message: ''
             }

@@ -44,10 +44,8 @@ define([
 
             output = processStylesheet(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss');
 
-            assert.property(output, 'ast');
-            assert.isObject(output.ast);
-            assert.property(output, 'name');
-            assert.isString(output.name);
+            assert.isObject(output);
+            assert.isFunction(output.traverse);
           }));
         },
         'test that inline config comments are appended to adjacent rules': function() {
@@ -64,7 +62,7 @@ define([
             output = processStylesheet(stylesheet.toString('utf8'), './tests/test_helpers/css.css');
             results = polish(stylesheet.toString('utf8'), './tests/test_helpers/css.css', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'] });
 
-            output.ast.traverse(function(node) {
+            output.traverse(function(node) {
               if (node.type === 'id') {
                 idCount++;
               }

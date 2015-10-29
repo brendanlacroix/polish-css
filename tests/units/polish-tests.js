@@ -53,8 +53,8 @@ define(function (require) {
         assert.property(results.errors[0], 'plugin');
         assert.property(results.errors[0].plugin, 'name');
         assert.property(results.errors[0].plugin, 'message');
-        assert.property(results.errors[0], 'data');
-        assert.property(results.errors[0].data, 'rule');
+        assert.property(results.errors[0], 'error');
+        assert.property(results.errors[0].error, 'node');
       }));
     },
     'test that ignoring plugins properly passes into getPlugins': function() {
