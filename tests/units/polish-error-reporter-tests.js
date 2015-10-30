@@ -28,7 +28,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/no-errors.css', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'], ignoredPlugins: ['no-styling-elements'] });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/no-errors.css', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2] }, ignoredPlugins: ['no-styling-elements'] });
 
           polish.reporter(results);
 
@@ -44,7 +44,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids'] });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2] } });
 
           polish.reporter(results);
 
@@ -68,7 +68,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'] });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2] } });
 
           polish.reporter(results);
 
@@ -95,7 +95,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements','polish-plugin-match-stylesheet-names-to-rules'] });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2], 'polish-plugin-match-stylesheet-names-to-rules': [2] } });
 
           polish.reporter(results);
 

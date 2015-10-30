@@ -15,7 +15,7 @@ define(function (require) {
         }
 
         try {
-          polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', {});
+          polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: {} });
         } catch(e) {
           assert.strictEqual(e.message, 'Polish requires a list of plugins. Please add some plugin modules to your config.');
         }
@@ -30,7 +30,7 @@ define(function (require) {
         }
 
         try {
-          polish(stylesheet.toString('utf8'), './tests/test_helpers/empty.css', { plugins: ['polish-plugin-something'] });
+          polish(stylesheet.toString('utf8'), './tests/test_helpers/empty.css', { config: { 'polish-plugin-something': [2] } });
         } catch(e) {
           assert.strictEqual(e.message, 'Polish cannot lint empty files: ./tests/test_helpers/empty.css');
         }
@@ -45,7 +45,7 @@ define(function (require) {
           throw error;
         }
 
-        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids'] });
+        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2] } });
 
         assert.isObject(results);
         assert.strictEqual(results.errors.length, 1);
@@ -66,7 +66,7 @@ define(function (require) {
           throw error;
         }
 
-        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'], ignoredPlugins: ['no-styling-elements'] });
+        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2] }, ignoredPlugins: ['no-styling-elements'] });
 
         assert.isObject(results);
         assert.strictEqual(results.errors.length, 1);

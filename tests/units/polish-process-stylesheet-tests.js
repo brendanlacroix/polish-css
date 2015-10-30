@@ -60,7 +60,7 @@ define([
             }
 
             output = processStylesheet(stylesheet.toString('utf8'), './tests/test_helpers/css.css');
-            results = polish(stylesheet.toString('utf8'), './tests/test_helpers/css.css', { plugins: ['polish-plugin-no-styling-ids','polish-plugin-no-styling-elements'] });
+            results = polish(stylesheet.toString('utf8'), './tests/test_helpers/css.css', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2] } });
 
             output.traverse(function(node) {
               if (node.type === 'id') {
