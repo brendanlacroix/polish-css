@@ -1,4 +1,4 @@
-# PolishCSS :nail_care:
+# Polish
 
 [![Build Status](https://travis-ci.org/brendanlacroix/polish-css.svg)](https://travis-ci.org/brendanlacroix/polish-css) [![codecov.io](https://codecov.io/github/brendanlacroix/polish-css/coverage.svg?branch=master)](https://codecov.io/github/brendanlacroix/polish-css?branch=master)
 
@@ -16,14 +16,14 @@ Keep your code more consistent and more reliable...
 
 Or don't. You're the boss.
 
-Play by your own rules with PolishCSS.
+Manicure your CSS with Polish.
 
 **Features:**
-- :nail_care: Totally unopinionated. No default linters.
-- :nail_care: Totally plugin based.
-- :nail_care: Totally named in honor of the nail polish emoji.
+- Totally unopinionated. No default linters.
+- Totally plugin based.
+- Totally named in honor of the nail polish emoji.
 
-_PolishCSS works with CSS, SCSS, Sass, and Less._
+_Polish works with CSS, SCSS, Sass, and Less._
 
 ## <a name="quickstart"></a>Quick start
 
@@ -55,7 +55,7 @@ Linters can be ignored on a per-ruleset basis using inline commenting:
 Install from [npm](https://www.npmjs.com/package/polish-css):
 `npm install polish-css`
 
-If you want to use the CLI, install PolishCSS globally:
+If you want to use the CLI, install Polish globally:
 `npm install -g polish-css`
 
 
