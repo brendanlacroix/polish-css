@@ -15,7 +15,7 @@ define(function (require) {
         }
 
         try {
-          polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: {} });
+          polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', []);
         } catch(e) {
           assert.strictEqual(e.message, 'Polish requires a list of plugins. Please add some plugin modules to your config.');
         }
@@ -30,7 +30,7 @@ define(function (require) {
         }
 
         try {
-          polish(stylesheet.toString('utf8'), './tests/test_helpers/empty.css', { config: { 'polish-plugin-something': [2] } });
+          polish(stylesheet.toString('utf8'), './tests/test_helpers/empty.css', [ { module: 'polish-something', severity: 2 } ]);
         } catch(e) {
           assert.strictEqual(e.message, 'Polish cannot lint empty files: ./tests/test_helpers/empty.css');
         }
@@ -45,7 +45,7 @@ define(function (require) {
           throw error;
         }
 
-        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2] } });
+        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', [ { module: 'polish-no-styling-ids', severity: 2 } ]);
 
         assert.isObject(results);
         assert.strictEqual(results.errors.length, 1);
@@ -57,25 +57,8 @@ define(function (require) {
         assert.property(results.errors[0].error, 'node');
       }));
     },
-    'test that ignoring plugins properly passes into getPlugins': function() {
-      var deferred = this.async(3000),
-          results;
-
-      fs.readFile('./tests/test_helpers/scss.scss', deferred.callback(function(error, stylesheet) {
-        if (error) {
-          throw error;
-        }
-
-        results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2] }, ignoredPlugins: ['no-styling-elements'] });
-
-        assert.isObject(results);
-        assert.strictEqual(results.errors.length, 1);
-        assert.strictEqual(results.errors[0].plugin.name, 'no-styling-ids');
-      }));
-    },
     'test that helper methods are exported': function() {
       assert.property(polish, 'reporter');
-      assert.property(polish, 'getPlugins');
     }
   });
 });

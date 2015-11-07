@@ -35,12 +35,22 @@ Then do this:
 ```javascript
 var stylesheet       = '#css { color: red; }',
     pathToStylesheet = '/path/to/stylesheet',
-    pluginsToUse     = ['polish-plugin-no-styling-ids'],
-    errors;
+    myPrivateModules = require('./path/to/private/modules'),
+    pluginsToUse     = [
+      {
+        module   : 'polish-no-styling-ids',
+        severity : 2
+      },
+      {
+        module   : myPrivateModules.someLinter,
+        severity : 2
+      }
+    ],
+    results;
 
-errors = polish(stylesheet, pathToStylesheet, { plugins: pluginsToUse });
+results = polish(stylesheet, pathToStylesheet, pluginsToUse);
 
-polish.reporter(pathToStylesheet, errors);
+polish.reporter(pathToStylesheet, results.errors, results.warnings);
 ```
 
 Linters can be ignored on a per-ruleset basis using inline commenting:

@@ -28,9 +28,9 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/no-errors.css', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2] }, ignoredPlugins: ['no-styling-elements'] });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/no-errors.css', [ { module: 'polish-no-styling-ids', severity: 2 }, { module: 'polish-no-styling-elements', severity: 2 } ] );
 
-          polish.reporter(results);
+          polish.reporter('./tests/test_helpers/no-errors.css', results.errors, results.warnings);
 
           chai.expect(consoleLogStub).to.not.be.called;
         }));
@@ -44,9 +44,9 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2] } });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', [ { module: 'polish-no-styling-ids', severity: 2 } ]);
 
-          polish.reporter(results);
+          polish.reporter('./tests/test_helpers/scss.scss', results.errors, results.warnings);
 
           chai.expect(consoleLogStub).to.be.calledOnce;
           /* should report the filename */
@@ -68,9 +68,9 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2] } });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', [ { module: 'polish-no-styling-ids', severity: 2 }, { module: 'polish-no-styling-elements', severity: 2 } ]);
 
-          polish.reporter(results);
+          polish.reporter('./tests/test_helpers/scss.scss', results.errors, results.warnings);
 
           chai.expect(consoleLogStub).to.be.calledOnce;
           /* should report the filename */
@@ -95,9 +95,9 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
             throw error;
           }
 
-          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', { config: { 'polish-plugin-no-styling-ids': [2], 'polish-plugin-no-styling-elements': [2], 'polish-plugin-match-stylesheet-names-to-rules': [2] } });
+          results = polish(stylesheet.toString('utf8'), './tests/test_helpers/scss.scss', [ { module: 'polish-no-styling-ids', severity: 2 }, { module: 'polish-no-styling-elements', severity: 2 }, { module: 'polish-match-stylesheet-names-to-rules', severity: 2 } ]);
 
-          polish.reporter(results);
+          polish.reporter('./tests/test_helpers/scss.scss', results.errors, results.warnings);
 
           chai.expect(consoleLogStub).to.be.calledOnce;
           /* should report the filename */
@@ -108,7 +108,7 @@ define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/n
           /* should report the failed node as a string */
           chai.expect(consoleLogStub).to.be.calledWithMatch('#no-styling-ids');
           chai.expect(consoleLogStub).to.be.calledWithMatch('div');
-          chai.expect(consoleLogStub).to.be.calledWithMatch('File warning:');
+          chai.expect(consoleLogStub).to.be.calledWithMatch('File warning');
           /* should report the error message */
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[0].plugin.message);
           chai.expect(consoleLogStub).to.be.calledWithMatch(results.errors[1].plugin.message);
