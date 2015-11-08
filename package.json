@@ -31,7 +31,7 @@
     "intern": "^3.0.6",
     "polish-match-stylesheet-names-to-rules": "^1.0.0",
     "polish-no-styling-elements": "^1.0.0",
-    "polish-no-styling-ids": "^2.1.0",
+    "polish-no-styling-ids": "^1.0.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
   }
