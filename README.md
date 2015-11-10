@@ -1,4 +1,4 @@
-# Polish
+![Polish. Give your stylesheets a manicure.](/../images/images/polish-header.png)
 
 [![Build Status](https://travis-ci.org/brendanlacroix/polish-css.svg)](https://travis-ci.org/brendanlacroix/polish-css) [![codecov.io](https://codecov.io/github/brendanlacroix/polish-css/coverage.svg?branch=master)](https://codecov.io/github/brendanlacroix/polish-css?branch=master) [![bitHound Score](https://www.bithound.io/github/brendanlacroix/polish-css/badges/score.svg)](https://www.bithound.io/github/brendanlacroix/polish-css) [![bitHound Dependencies](https://www.bithound.io/github/brendanlacroix/polish-css/badges/dependencies.svg)](https://www.bithound.io/github/brendanlacroix/polish-css/master/dependencies/npm)
 
