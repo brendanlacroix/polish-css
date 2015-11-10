@@ -1,3 +1,5 @@
+/* jshint expr:true */
+
 define(['require', 'intern/chai!', 'intern/dojo/node!sinon-chai', 'intern/dojo/node!sinon'], function (require, chai, sinonChai, sinon) {
   var registerSuite = require('intern!object'),
       assert        = require('intern/chai!assert'),

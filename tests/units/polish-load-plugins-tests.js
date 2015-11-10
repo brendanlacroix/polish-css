@@ -34,7 +34,7 @@ define([
                   }
                 ],
                 name: 'banned-selectors',
-                message : function(error) {},
+                message : function(error) { return '' + error.error.message + '.'; },
                 test: function() {}
               },
               severity: 2,
