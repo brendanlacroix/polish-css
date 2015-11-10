@@ -22,6 +22,7 @@
     "gonzales-pe": "git://github.com/brendanlacroix/gonzales-pe.git",
     "lodash": "^3.10.1",
     "log-symbols": "^1.0.2",
+    "require-relative": "^0.8.7",
     "text-table": "^0.2.0",
     "vinyl-fs": "^2.1.1"
   },
