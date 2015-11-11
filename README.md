@@ -19,13 +19,13 @@ Or don't. You're the boss.
 Manicure your CSS with Polish.
 
 **Features:**
-- Totally unopinionated. No default linters.
+- Totally unopinionated.
 - Totally plugin based.
 - Totally named in honor of the nail polish emoji.
 
 _Polish works with CSS, SCSS, Sass, and Less._
 
-## <a name="quickstart"></a>Quick start
+## <a name="quickstart"></a>Quickstart
 
 Do this:
 
@@ -42,8 +42,9 @@ var stylesheet       = '#css { color: red; }',
         severity : 2
       },
       {
-        module   : myPrivateModules.someLinter,
-        severity : 2
+        module        : myPrivateModules.someLinter,
+        severity      : 2,
+        lintingOption : ['.things', '.to', '.pass', '.to', '.the', '.linter']
       }
     ],
     results;
@@ -69,10 +70,15 @@ If you want to use the CLI, install Polish globally:
 `npm install -g polish-css`
 
 
-## <a name="resources"></a>Resources
-- [Writing linters](https://github.com/brendanlacroix/polish-css/wiki/Writing-linters)
-- [Using results](https://github.com/brendanlacroix/polish-css/wiki/Using-results)
-- [Command line use](https://github.com/brendanlacroix/polish-css/wiki/Command-line-usage)
+## Example plugins
+- *[polish-banned-selectors](https://github.com/brendanlacroix/polish-banned-selectors)* Ban a list of selectors.
+- *[polish-no-added-typography](https://github.com/brendanlacroix/polish-no-added-typography)* Prevent redefining typographic rules throughout your stylesheets.
+- *[polish-use-color-variables](https://github.com/brendanlacroix/polish-use-color-variables)* Enforce defining your colors as variables (for Sass and SCSS).
+- *[polish-use-box-shadow-mixin](https://github.com/brendanlacroix/polish-use-box-shadow-mixin)* Enforce using a mixin to make box shadows (for Sass and SCSS).
+- *[polish-no-calc-in-bg-position](https://github.com/brendanlacroix/polish-no-calc-in-bg-position)* Ban using `calc` in `background-position` (it crashes older IE versions).
+- *[polish-no-styling-ids](https://github.com/brendanlacroix/polish-no-styling-ids)* Don't allow styling IDs.
+- *[polish-only-extend-placeholders](https://github.com/brendanlacroix/polish-only-extend-placeholders)* Make sure `@extend` is only used with placeholders (for Sass and SCSS).
+- *[polish-no-bang-important](https://github.com/brendanlacroix/polish-no-bang-important)* Don't let anyone use `!important`.
 
 
 ## <a name="license"></a>License
