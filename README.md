@@ -5,7 +5,7 @@
 - [Overview](#overview)
 - [Quick start](#quickstart)
 - [Installation](#installation)
-- [Resources](#resources)
+- [Example plugins](#plugins)
 - [License](#license)
 
 ## <a name="overview"></a>Overview
@@ -70,7 +70,7 @@ If you want to use the CLI, install Polish globally:
 `npm install -g polish-css`
 
 
-## Example plugins
+## <a name="plugins"></a>Example plugins
 - *[polish-banned-selectors](https://github.com/brendanlacroix/polish-banned-selectors)* Ban a list of selectors.
 - *[polish-no-added-typography](https://github.com/brendanlacroix/polish-no-added-typography)* Prevent redefining typographic rules throughout your stylesheets.
 - *[polish-use-color-variables](https://github.com/brendanlacroix/polish-use-color-variables)* Enforce defining your colors as variables (for Sass and SCSS).
