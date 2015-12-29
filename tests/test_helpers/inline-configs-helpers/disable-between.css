@@ -1,0 +1,35 @@
+/* polish-disable */
+
+#wont-fail-despite-rules {
+  color: green;
+}
+
+/* polish-enable */
+
+#but-this-will-fail {
+  color: red;
+}
+
+/* polish-disable no-styling-ids */
+
+#this-passes {
+  color: green;
+}
+
+/* polish-enable */
+
+#this-fails {
+  color: red;
+}
+
+/* polish-disable no-styling-ids, no-bang-important */
+
+#this-passes {
+  color: green !important;
+}
+
+/* polish-enable no-styling-ids */
+
+#now-it-doesnt {
+  color: green !important; /* this still does */
+}

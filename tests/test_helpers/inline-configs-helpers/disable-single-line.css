@@ -1,0 +1,11 @@
+#disable-a-rule { /* polish-disable-line */
+  color: green;
+}
+
+#disable-a-rule {
+  color: green !important; /* polish-disable-line */
+}
+
+#disable-ids span { /* polish-disable-line no-styling-ids */
+  color: green !important;
+}

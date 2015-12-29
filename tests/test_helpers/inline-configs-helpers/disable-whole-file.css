@@ -1,0 +1,5 @@
+/* polish-disable */
+
+#wont-fail-despite-rules {
+  color: green;
+}

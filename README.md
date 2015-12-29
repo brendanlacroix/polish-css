@@ -54,13 +54,23 @@ results = polish(stylesheet, pathToStylesheet, pluginsToUse);
 polish.reporter(pathToStylesheet, results.errors, results.warnings);
 ```
 
-Linters can be ignored on a per-ruleset basis using inline commenting:
+Linters can be ignored using inline commenting:
+
+To disable a block of comments, use `/* polish-disable */` and `/* polish-enable */`.
 ```css
-/* polish no-styling-ids=false */
-#wont-be-reported {
-  color: pink;
+/* polish-disable */
+.polish-is-entirely-disabled-here {
+  color: green;
 }
+/* polish-enable */
 ```
+
+To disable a specific rule for a range of comments, use the same syntax as above with a comma-separated
+list of plugins to disable `/* polish-disable no-styling-ids, no-styling-elements */`. They can be individually
+re-enabled using `/* polish-enable no-styling-elements */`.
+
+To disable an individual line, use `/* polish-disable-line */`. It also can accept a comma-separated list of plugins.
+
 
 ## <a name="installation"></a>Installation
 Install from [npm](https://www.npmjs.com/package/polish-css):

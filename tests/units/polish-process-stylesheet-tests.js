@@ -47,30 +47,6 @@ define([
             assert.isObject(output);
             assert.isFunction(output.traverse);
           }));
-        },
-        'test that inline config comments are appended to adjacent rules': function() {
-          var deferred = this.async(3000),
-              idCount = 0,
-              output,
-              results;
-
-          fs.readFile('./tests/test_helpers/css.css', deferred.callback(function(error, stylesheet) {
-            if (error) {
-              throw error;
-            }
-
-            output = processStylesheet(stylesheet.toString('utf8'), './tests/test_helpers/css.css');
-            results = polish(stylesheet.toString('utf8'), './tests/test_helpers/css.css', [ { module: 'polish-no-styling-ids', severity: 2 }, { module: 'polish-no-styling-elements', severity: 2} ]);
-
-            output.traverse(function(node) {
-              if (node.type === 'id') {
-                idCount++;
-              }
-            });
-
-            assert.strictEqual(idCount, 3);
-            assert.strictEqual(results.errors.length, 2);
-          }));
         }
       };
     });

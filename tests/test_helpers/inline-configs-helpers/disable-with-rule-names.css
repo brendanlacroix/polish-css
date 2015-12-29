@@ -1,0 +1,17 @@
+/* polish-disable no-bang-important */
+
+#this-id-will-fail {
+  color: green !important; /* but this will pass */
+}
+
+/* polish-disable no-styling-ids */
+
+#this-id-wont-fail {
+  color: green;
+}
+
+/* polish-disable */
+
+#everything-is-disabled-from-here-down {
+  color: green !important;
+}

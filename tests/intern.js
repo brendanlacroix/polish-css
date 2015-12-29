@@ -47,7 +47,8 @@ define({
     'tests/units/polish-tests',
     'tests/units/polish-load-plugins-tests',
     'tests/units/polish-process-stylesheet-tests',
-    'tests/units/polish-error-reporter-tests'
+    'tests/units/polish-error-reporter-tests',
+    'tests/units/polish-get-inline-configs-tests'
   ],
 
   // Functional test suite(s) to execute against each browser once non-functional tests are completed
