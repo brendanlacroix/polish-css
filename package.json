@@ -1,6 +1,6 @@
 {
   "name": "polish-css",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A plugin-based linting tool for CSS. Make your stylesheets perfect. Add an extra coat of polish.",
   "main": "./lib/polish.js",
   "bin": {
