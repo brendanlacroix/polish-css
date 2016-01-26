@@ -151,9 +151,7 @@ define([
             assert.sameMembers(ast.content[4].content[0]._polishIgnore, ['no-styling-ids']);
             assert.isFalse(ast.content[4].content[1]._polishIgnore);
           }));
-        },
-        // 'test that polish can be passed configurations in a comment': function() {},
-        // 'test that polish can be passed a new severity in a comment': function() {}
+        }
       };
     });
   }
