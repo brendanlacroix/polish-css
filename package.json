@@ -29,7 +29,7 @@
     "text-table": "^0.2.0"
   },
   "devDependencies": {
-    "codecov.io": "^0.1.6",
+    "codecov.io": "^0.1.7",
     "intern": "^3.0.6",
     "polish-match-stylesheet-names-to-rules": "^1.0.0",
     "polish-no-bang-important": "^1.0.0",
