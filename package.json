@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "codecov.io": "^0.1.6",
-    "intern": "^3.0.6",
+    "intern": "^3.3.2",
     "polish-match-stylesheet-names-to-rules": "^1.0.0",
     "polish-no-bang-important": "^1.0.0",
     "polish-no-styling-elements": "^1.0.0",
