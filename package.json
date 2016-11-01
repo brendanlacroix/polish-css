@@ -15,7 +15,7 @@
     "changelog": "conventional-changelog -o CHANGELOG.md"
   },
   "engines": {
-    "node": ">=0.10 <=4.2.1"
+    "node": ">= 4"
   },
   "author": "Brendan LaCroix <brendanlacroix@gmail.com>",
   "license": "MIT",
