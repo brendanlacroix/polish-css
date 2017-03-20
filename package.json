@@ -35,7 +35,7 @@
     "polish-no-bang-important": "^1.0.0",
     "polish-no-styling-elements": "^1.0.0",
     "polish-no-styling-ids": "^1.0.0",
-    "sinon": "^1.17.2",
+    "sinon": "^2.1.0",
     "sinon-chai": "^2.8.0"
   }
 }
